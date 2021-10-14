@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 14:16:24 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/14 14:18:07 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/14 15:53:13 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/14 15:53:40 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strlowcase(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	char	*tmp;
+	unsigned int	idx;
 
-	tmp = str;
-	while (*tmp)
+	idx = 0;
+	if (n == 0)
 	{
-		if (*tmp >= 65 && *tmp <= 90)
-		{
-			*tmp = *tmp + 32;
-		}
-		tmp++;
+		return (0);
 	}
-	return (str);
+	while (idx < n && (s1[idx] || s2[idx]))
+	{
+		if (s1[idx] == s2[idx])
+		{
+			idx++;
+		}
+		else if (s1[idx] > s2[idx])
+		{
+			return (s1[idx] - s2[idx]);
+		}
+		else if (s1[idx] < s2[idx])
+		{
+			return (s1[idx] - s2[idx]);
+		}
+	}
+	return (0);
 }

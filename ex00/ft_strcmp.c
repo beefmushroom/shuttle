@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 14:09:54 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/14 14:11:05 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/14 15:51:09 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/14 15:52:28 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_str_is_uppercase(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
-	while (*str)
+	int	idx;
+
+	idx = 0;
+	while (s1[idx] && (s1[idx] == s2[idx]))
 	{
-		if (*str < 65 || *str > 90)
-		{
-			return (0);
-		}
-		str++;
+		idx += 1;
 	}
-	return (1);
+	return (s1[idx] - s2[idx]);
 }

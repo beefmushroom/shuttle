@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 13:26:59 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/14 15:02:43 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/14 15:54:40 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/14 15:54:59 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
-	int	idx;
+	char	*cat;
 
-	idx = 0;
-	while (src[idx])
+	cat = dest;
+	while (*cat)
 	{
-		dest[idx] = src[idx];
-		idx++;
+		cat++;
 	}
-	dest[idx] = 0;
+	while (*src)
+	{
+		*cat++ = *src++;
+	}
+	*cat = 0;
 	return (dest);
 }
