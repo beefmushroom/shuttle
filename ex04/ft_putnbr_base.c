@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 09:29:36 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/18 10:30:20 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/10/18 10:52:05 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_putnbr_base(int nbr, char *base)
 {
 	unsigned int	len;
 	unsigned int	n;
-	
+
 	len = base_check (base);
 	if (!len)
 		return ;
@@ -53,7 +53,7 @@ void	ft_putnbr_base(int nbr, char *base)
 	}
 	else
 		n = nbr;
-	if (n > len)
+	if (n >= len)
 		ft_putnbr_base ((n / len), base);
-	write(1, base[n % len], 1);
+	write(1, &base[n % len], 1);
 }
