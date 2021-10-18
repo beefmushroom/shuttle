@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:57:34 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/18 16:06:25 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/10/18 16:55:20 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	ft_atoi_base(char *str, char *base)
 	while (*str)
 	{
 		if (get_nb(*str, base) == -1)
-			return (0);
+			break ;
 		result = (result * len) + get_nb(*str, base);
 		str++;
 	}
