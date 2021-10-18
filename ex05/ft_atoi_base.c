@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:57:34 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/18 14:00:17 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/10/18 16:06:25 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int	is_valid_base(char *base)
 	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '-' || base[i] == '+' || base[i] == '\t\n\v\f\r ')
+		if (base[i] == '-' || base[i] == '+')
+			return (0);
+		if ((base[i] >= 9 && base[i] <= 13) || base[i] == ' ')
 			return (0);
 		j = i + 1;
 		while (base[j])
@@ -31,23 +33,18 @@ int	is_valid_base(char *base)
 			}
 			j++;
 		}
-		i++
+		i++;
 	}
 	if (i < 2)
 		return (0);
 	return (i);
 }
 
-int str_len(char *str)
+char	*str_check(char *str)
 {
-	int	idx;
-
-	idx = 0;
-	while (str[idx])
-	{
-		idx++;
-	}
-	return (idx);
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
+		str++;
+	return (str);
 }
 
 int	get_nb(char c, char *base)
@@ -55,32 +52,39 @@ int	get_nb(char c, char *base)
 	int	j;
 
 	j = 0;
-	while (base[j] && (base[j] != c))
+	while (base[j])
 	{
+		if (c == base[j])
+			return (j);
 		j++;
 	}
-	return (j);
+	return (-1);
 }
 
 int	ft_atoi_base(char *str, char *base)
 {
-	int		len;
-	char 	*base_str;
-	int		str_len;
-	int		i;
-	int		sign;
+	int	len;
+	int	sign;
+	int	result;
 
+	result = 0;
 	sign = 1;
-	str_len = str_len(str);
 	len = is_valid_base(base);
 	if (!len)
-		return (0);	
-	while ((str[i] >= 9 && str[i] <= 13)|| str[i] == ' ')
-			i++;
-	while (str[i] == '+' || str[i] == '-')
-		{	if (str[i] == '-')
-				sign *= -1;
-			i++;
-		}
-	while (
+		return (0);
+	str = str_check(str);
+	while (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign *= -1;
+		str++;
+	}
+	while (*str)
+	{
+		if (get_nb(*str, base) == -1)
+			return (0);
+		result = (result * len) + get_nb(*str, base);
+		str++;
+	}
+	return (sign * result);
 }
