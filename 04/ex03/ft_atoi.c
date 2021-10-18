@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_v2.c                                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 09:36:33 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/17 22:17:54 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/14 23:32:47 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/15 07:54:10 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdlib.h>
 
-void	puzzle_set(char *str);
-
-int	main(int argc, char *argv[])
+int	ft_atoi(char *str)
 {
-	if (argc == 2){
-		puzzle_set(argv[1]);
+	int	num;
+	int	sign;
+
+	num = 0;
+	sign = 1;
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
+		str++;
+	while (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign *= -1;
+		str++;
 	}
-	return (0);
+	while (*str >= '0' && *str <= '9')
+	{
+		num = (num * 10) + (*str - '0');
+		str++;
+	}
+	return (num * sign);
 }
