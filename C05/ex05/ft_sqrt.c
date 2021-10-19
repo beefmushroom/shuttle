@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 19:28:53 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/19 09:48:23 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/19 09:23:36 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/19 10:44:02 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_recursive_power(int nb, int power)
+int	ft_sqrt(int nb)
 {
-	if (power == 0)
-		return (1);
-	if (nb < 0)
-		return (0);
-	while (power-- > 0)
-		return (nb * ft_recursive_power(nb, power));
+	int	n;
+
+	n = 0;
+	while (n < 46341 && (n * n <= nb))
+	{
+		if (n * n == nb)
+			return (n);
+		n++;
+	}
 	return (0);
 }

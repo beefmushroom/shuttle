@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 19:28:53 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/19 09:48:23 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/19 10:04:10 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/19 10:23:22 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_recursive_power(int nb, int power)
+int	ft_is_prime(int nb)
 {
-	if (power == 0)
-		return (1);
-	if (nb < 0)
+	int	s;
+
+	s = 2;
+	if (nb <= 1)
 		return (0);
-	while (power-- > 0)
-		return (nb * ft_recursive_power(nb, power));
-	return (0);
+	else if (nb <= 3)
+		return (1);
+	while (s <= nb / s)
+	{
+		if ((nb % s) == 0)
+			return (0);
+		s++;
+	}
+	return (1);
 }
