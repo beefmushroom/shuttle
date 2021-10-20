@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
+/*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 16:25:28 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/14 16:50:15 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/18 16:32:22 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/18 16:47:14 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+int	ft_iterative_factorial(int nb)
 {
-	int		div;
-	int		mod;
-	char	buf;
-
-	div = nb / 10;
-	mod = nb % 10;
 	if (nb < 0)
-	{
-		write(1, "-", 1);
-		div = -div;
-		mod = -mod;
-	}
-	if (div != 0)
-	{
-		ft_putnbr(div);
-	}
-	buf = mod + '0';
-	write(1, &buf, 1);
+		return (0);
+	else if (nb == 0)
+		return (1);
+	return (nb * ft_iterative_factorial(nb - 1));
 }

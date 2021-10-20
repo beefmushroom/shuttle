@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
+/*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 16:20:02 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/14 16:22:41 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/18 19:28:53 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/19 09:48:23 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+int	ft_recursive_power(int nb, int power)
 {
-	while (*str)
-	{
-		write(1, str, 1);
-		str++;
-	}
+	if (power == 0)
+		return (1);
+	if (nb < 0)
+		return (0);
+	while (power-- > 0)
+		return (nb * ft_recursive_power(nb, power));
+	return (0);
 }

@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 16:14:35 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/14 16:15:42 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/19 09:23:36 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/19 10:44:02 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_strlen(char *str)
+int	ft_sqrt(int nb)
 {
-	int	cnt;
+	int	n;
 
-	cnt = 0;
-	while (*str)
+	n = 0;
+	while (n < 46341 && (n * n <= nb))
 	{
-		cnt++;
-		str++;
+		if (n * n == nb)
+			return (n);
+		n++;
 	}
-	return (cnt);
+	return (0);
 }

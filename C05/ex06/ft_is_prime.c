@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 23:32:47 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/18 16:07:14 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/19 10:04:10 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/19 10:23:22 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_atoi(char *str)
+int	ft_is_prime(int nb)
 {
-	int	num;
-	int	sign;
+	int	s;
 
-	num = 0;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	while (*str == '+' || *str == '-')
+	s = 2;
+	if (nb <= 1)
+		return (0);
+	else if (nb <= 3)
+		return (1);
+	while (s <= nb / s)
 	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
+		if ((nb % s) == 0)
+			return (0);
+		s++;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		num = (num * 10) + (*str - '0');
-		str++;
-	}
-	return (num * sign);
+	return (1);
 }
