@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 19:28:53 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/21 09:23:27 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/10/21 09:26:19 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,4 @@ int	ft_recursive_power(int nb, int power)
 	if (nb < 0)
 		return (0);
 	return (nb * ft_recursive_power(nb, power - 1));
-	return (0);
 }
