@@ -1,30 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 16:42:28 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/19 16:51:07 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/21 09:39:34 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/21 10:02:17 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int	main(int argc, char **argv)
+int	str_len(char *src)
 {
-	char	*name;
+	int	i;
 
-	if (argc > 0)
+	i = 0;
+	while (src[i])
 	{
-		name = argv[0];
-		while (*name)
-		{
-			write(1, name, 1);
-			name++;
-		}
-		write(1, "\n", 1);
+		i++;
 	}
-	return (0);
+	return (i);
+}
+
+char	*ft_strdup(char *src)
+{
+	int		len;
+	char	*dest;
+	int		i;
+
+	i = 0;
+	len = str_len(src);
+	dest = (char *)malloc((len * sizeof(char)) + 1);
+	if (dest == NULL)
+		return (0);
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = 0;
+	return (dest);
 }

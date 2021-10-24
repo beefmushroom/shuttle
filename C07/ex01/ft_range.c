@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 09:23:36 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/19 10:44:02 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/21 10:03:27 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/21 10:27:29 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int	ft_sqrt(int nb)
+int	*ft_range(int min, int max)
 {
-	int	n;
+	int	size;
+	int	*range;
+	int	i;
 
-	n = 0;
-	while (n < 46341 && (n * n <= nb))
+	i = 0;
+	size = max - min;
+	if (min >= max)
+		return (NULL);
+	range = (int *)malloc((sizeof(int) * size));
+	while (min < max)
 	{
-		if (n * n == nb)
-			return (n);
-		n++;
+		range[i] = min;
+		min++;
+		i++;
 	}
-	return (0);
+	return (range);
 }
