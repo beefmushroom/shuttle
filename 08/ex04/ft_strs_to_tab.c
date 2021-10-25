@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 09:49:49 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/25 10:52:55 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/10/25 15:28:06 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -24,9 +24,15 @@ int	strlen(char *str)
 
 char	*strcpy(char *dst, char *src)
 {
+	char	*dst;
+
+	dst = (char *)malloc(sizeof(char) * src + 1);
+	if (dst == NULL)
+		return (NULL);
 	while (*src)
 		*dst++ = *src++;
 	*dst = 0;
+	return (dst);
 }
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
@@ -36,6 +42,8 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 
 	i = 0;
 	str = (t_stock_str *)malloc(sizeof(t_stock_str) * (ac + 1));
+	if (str == NULL)
+		return (NULL);
 	while (i < ac)
 	{
 		str[i]->size = strlen(av[i]);

@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 10:40:54 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/25 10:52:47 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/10/25 15:28:25 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_show_tab(struct s_stock_str *par)
 	int		i;
 
 	i = 0;
-	while (par[i])
+	while (par[i]->str)
 	{	
 		ft_putstr(par[i]->str);
 		ft_putsize(par[i]->size);
