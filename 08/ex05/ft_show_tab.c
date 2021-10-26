@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_show_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/25 10:40:54 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/26 07:40:40 by sungjuki         ###   ########.fr       */
+/*   Created: 2021/10/26 09:51:41 by sungjuki          #+#    #+#             */
+/*   Updated: 2021/10/26 09:51:49 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
