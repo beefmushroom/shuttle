@@ -33,7 +33,7 @@ int	word_cnt(char *str, char *charset)
 		if (!is_charset(*str, charset))
 		{
 			cnt++;
-			while (*str && is_charset(*str, charset))
+			while (*str && !is_charset(*str, charset))
 				str++;
 		}
 		str++;

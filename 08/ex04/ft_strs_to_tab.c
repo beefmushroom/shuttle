@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 09:49:49 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/25 21:28:17 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/10/26 12:03:46 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -22,7 +22,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*strdup(char *src)
+char	*ft_strdup(char *src)
 {
 	char	*dst;
 	int		src_len;
@@ -59,7 +59,7 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	{
 		str[i].size = ft_strlen(av[i]);
 		str[i].str = av[i];
-		str[i].copy = strdup(av[i]);
+		str[i].copy = ft_strdup(av[i]);
 		i++;
 	}
 	str[i] = (t_stock_str){0, 0, 0};
