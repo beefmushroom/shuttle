@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 11:06:27 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/27 11:23:42 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/10/27 11:27:04 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	is_charset(char c, char *charset)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (charset[i])
@@ -65,9 +65,9 @@ char	**ft_split(char *str, char *charset)
 	i = 0;
 	words = words_cnt(str, charset);
 	ans = malloc(sizeof(char *) * (words + 1));
-	whlie (*str)
+	while (*str)
 	{
-		if(!is_charset(*str, charset))
+		if (!is_charset(*str, charset))
 		{
 			start = str;
 			while (*str && !is_charset(*str, charset))
@@ -75,7 +75,7 @@ char	**ft_split(char *str, char *charset)
 			end = str;
 		}
 		ans[i] = malloc(sizeof(char) * (end - start + 1));
-		ft_strcpy(ans[a++], start, end);
+		ft_strcpy(ans[i++], start, end);
 		str++;
 	}
 	ans[i] = 0;
