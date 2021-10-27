@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 11:06:27 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/10/27 11:27:04 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/10/27 12:25:21 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ char	**ft_split(char *str, char *charset)
 			while (*str && !is_charset(*str, charset))
 				str++;
 			end = str;
+			ans[i] = malloc(sizeof(char) * (end - start + 1));
+			ft_strcpy(ans[i++], start, end);
 		}
-		ans[i] = malloc(sizeof(char) * (end - start + 1));
-		ft_strcpy(ans[i++], start, end);
 		str++;
 	}
 	ans[i] = 0;
