@@ -6,13 +6,13 @@
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:42:04 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/12/21 12:42:58 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/12/21 17:24:35 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_nbrlen(long long nbr, int sign)
+static int	ft_nbrlen(long long nbr, int sign)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ int	ft_nbrlen(long long nbr, int sign)
 	return (i);
 }
 
-void	put_itoa(long long nbr, char *ans, int sign, int len)
+static void	put_itoa(long long nbr, char *ans, int sign, int len)
 {
 	if (nbr == 0)
 	{

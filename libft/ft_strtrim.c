@@ -6,13 +6,13 @@
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 16:28:04 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/12/21 13:25:10 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/12/21 17:25:02 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_set(char s, const char *set)
+static int	is_set(char s, const char *set)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ int	is_set(char s, const char *set)
 	return (0);
 }
 
-char	*make_str(char *rst, char const *s1, size_t	tp1, size_t tp2)
+static char	*make_str(char *rst, char const *s1, size_t	tp1, size_t tp2)
 {
 	size_t	idx;
 
