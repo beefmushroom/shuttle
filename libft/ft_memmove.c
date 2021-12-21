@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 13:10:41 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/12/17 12:52:12 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:11:44 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*c_src;
 	size_t			idx;
 
+	if (len == 0 || src == 0)
+		return (dst);
 	c_dst = (unsigned char *)dst;
 	c_src = (unsigned char *)src;
-	if (!c_dst || !c_src)
-		return (0);
-	if (len == 0)
-		return (dst);
 	idx = -1;
 	if (c_dst < c_src)
 	{

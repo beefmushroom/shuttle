@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 12:18:44 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/12/14 10:29:30 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:46:07 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	idx;
 	char	*ans;
 
-	if (!s)
+	if (!s || !f)
 		return (0);
 	len = ft_strlen(s);
 	ans = (char *)malloc(sizeof(char) * len + 1);

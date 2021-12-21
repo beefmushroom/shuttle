@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 15:47:42 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/12/16 18:08:15 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/12/21 14:32:05 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 
+	if (c > 255)
+		c = c - 256;
 	i = ft_strlen(s);
 	while (i > 0)
 	{

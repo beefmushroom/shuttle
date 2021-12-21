@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:42:04 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/12/14 10:30:49 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/12/21 12:42:58 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_nbrlen(long long nbr, int sign)
 	int	i;
 
 	i = 0;
+	if (nbr == 0)
+		return (1);
 	while (nbr != 0)
 	{
 		i++;

@@ -3,6 +3,9 @@
 echo -e "\033[32;1m"NORM"\033[m"
 read $a
 norminette ./*.c ./*.h
+
+#: << "remark"
+
 echo -e "\033[32;1m"LIBFT TEST"\033[m"
 read $a
 git clone https://github.com/jtoty/Libftest
@@ -23,8 +26,14 @@ read $a
 git clone https://github.com/alelievr/libft-unit-test.git
 cd libft-unit-test/
 sed -i "" 's/LIBFTDIR	=	..\/libft/LIBFTDIR	=	..\//' Makefile
+cd ..
+make bonus
+cd libft-unit-test/
 make f
 cd ..
+
+#remark
+
 echo -e "\033[32;1m"libftTester"\033[m"
 read $a
 git clone https://github.com/Tripouille/libftTester.git

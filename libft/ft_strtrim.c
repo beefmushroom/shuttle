@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 16:28:04 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/12/17 15:28:52 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:25:10 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	tp2;
 	size_t	idx;
 
-	if (!s1 || !set)
+	if (!s1 || !set || !*s1)
 		return ((char *)s1);
 	tp1 = 0;
 	while (s1[tp1] && is_set(s1[tp1], set))

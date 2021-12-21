@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:39:39 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/12/13 15:43:40 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/12/20 13:06:03 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst)
+	if (!lst)
 		return (0);
 	while (1)
 	{
-		if (lst->next)
+		if (!lst->next)
 			break ;
 		lst = lst->next;
 	}

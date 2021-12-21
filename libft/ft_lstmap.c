@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:21:44 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/12/14 10:28:52 by sungjuki         ###   ########.fr       */
+/*   Updated: 2021/12/20 13:59:16 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	**ans;
 	t_list	*tmp;
 
-	if (!lst)
+	if (!lst || !f)
 		return (0);
 	ans = (t_list **)malloc(sizeof(t_list *));
+	*ans = 0;
 	while (lst)
 	{
 		tmp = ft_lstnew(f(lst->content));
 		if (!tmp)
 		{
 			ft_lstclear(ans, del);
+			free(ans);
+			ans = 0;
 			return (0);
 		}
 		ft_lstadd_back(ans, tmp);
