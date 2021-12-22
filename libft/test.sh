@@ -4,7 +4,7 @@ echo -e "\033[32;1m"NORM"\033[m"
 read $a
 norminette ./*.c ./*.h
 
-#: << "remark"
+: << "remark"
 
 echo -e "\033[32;1m"LIBFT TEST"\033[m"
 read $a
@@ -32,7 +32,7 @@ cd libft-unit-test/
 make f
 cd ..
 
-#remark
+remark
 
 echo -e "\033[32;1m"libftTester"\033[m"
 read $a
@@ -40,7 +40,7 @@ git clone https://github.com/Tripouille/libftTester.git
 cd libftTester/
 make a
 cd ..
-rm -rf Libftest/ libft-war-machine/ libft-unit-test/ libftTester/
+#rm -rf Libftest/ libft-war-machine/ libft-unit-test/ libftTester/
 echo -e "\033[32;1m"make fclean"\033[m"
 read $a
 make
