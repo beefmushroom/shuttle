@@ -42,7 +42,7 @@ endif
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-.Phony : all clean flean re bonus
+.Phony : all clean fclean re bonus
 
 all : $(NAME)
 
