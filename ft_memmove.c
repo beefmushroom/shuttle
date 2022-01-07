@@ -6,34 +6,36 @@
 /*   By: sungjuki <sungjuki@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 13:10:41 by sungjuki          #+#    #+#             */
-/*   Updated: 2021/12/21 13:11:44 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/01/07 11:51:23 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	unsigned char	*c_dst;
-	unsigned char	*c_src;
-	size_t			idx;
+	size_t			i;
+	size_t			j;
+	unsigned char	*dest_pt;
+	unsigned char	*src_pt;
 
-	if (len == 0 || src == 0)
-		return (dst);
-	c_dst = (unsigned char *)dst;
-	c_src = (unsigned char *)src;
-	idx = -1;
-	if (c_dst < c_src)
+	if (dest == 0 && src == 0)
+		return (0);
+	dest_pt = (unsigned char *)dest;
+	src_pt = (unsigned char *)src;
+	i = 0;
+	j = 0;
+	if (len == 0)
+		return (dest);
+	if (dest > src)
 	{
-		while (++idx < len)
-			c_dst[idx] = c_src[idx];
+		while (i < len)
+			dest_pt[len - 1 - i++] = src_pt[len - 1 - j++];
 	}
-	else
+	else if (dest < src)
 	{
-		idx = len;
-		while (--idx > 0)
-			c_dst[idx] = c_src[idx];
-		c_dst[0] = c_src[0];
+		while (i < len)
+			dest_pt[i++] = src_pt[j++];
 	}
-	return (dst);
+	return (dest);
 }

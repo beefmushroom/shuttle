@@ -55,4 +55,4 @@ fclean : clean
 re : fclean all
 
 bonus :
-	make bonus=42
+	make bonus=true all
