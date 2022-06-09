@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:14:45 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/09 13:46:33 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/06/09 22:04:28 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_rra(t_info *info)
 	info->bot_a->next = NULL;
 	info->top_a->prev = tmp;
 	tmp->next = info->top_a;
+	info->top_a = tmp;
 	info->top_a->prev = NULL;
 }
 
@@ -41,6 +42,7 @@ void	ft_rrb(t_info *info)
 	info->bot_b->next = NULL;
 	info->top_b->prev = tmp;
 	tmp->next = info->top_b;
+	info->top_b = tmp;
 	info->top_b->prev = NULL;
 }
 

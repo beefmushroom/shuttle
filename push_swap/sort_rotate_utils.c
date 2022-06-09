@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:42:53 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/08 16:07:51 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/06/09 21:56:39 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int	get_stack_min(t_num *stack)
 	while (stack)
 	{
 		if (ret > stack->content)
+		{
 			ret = stack->content;
+		}
 		stack = stack->next;
 	}
 	return (ret);
@@ -34,7 +36,9 @@ int	get_stack_max(t_num *stack)
 	while (stack)
 	{
 		if (ret < stack->content)
+		{
 			ret = stack->content;
+		}
 		stack = stack->next;
 	}
 	return (ret);
@@ -91,12 +95,12 @@ int	set_a_location_max(t_info *info)
 
 int	set_a_location_mid(int num, t_info *info)
 {
-	int		ret;
 	t_num	*stack_a;
+	int		ret;
 
-	ret = 0;
 	stack_a = info->top_a;
-	while (stack_a)
+	ret = 1;
+	while (stack_a->next)
 	{
 		if (num > stack_a->content && num < stack_a->next->content)
 			break ;

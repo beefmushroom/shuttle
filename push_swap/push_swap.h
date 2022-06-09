@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:15:44 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/09 13:40:28 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/06/09 21:12:21 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include <stdio.h>
 
 typedef struct s_num
 {

@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:44:17 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/09 14:16:41 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/06/09 21:45:33 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ void	ft_sort_3div(t_info *info)
 	idx = info->size_a * 2 / 3;
 	pv2 = info->arr[idx];
 	idx = info->size_a;
-	while (idx--)
+	while (idx)
+	{
 		ft_sort_3div_instruct(info, pv1, pv2);
+		idx--;
+	}
 }
 
 void	ft_sort_3div_instruct(t_info *info, int pv1, int pv2)
@@ -71,13 +74,13 @@ void	get_min_rotate(t_info *info, int *a, int *b)
 int	ft_get_faster(int a, int b, int a_loc, int b_loc)
 {
 	if (a < 0)
-		a = a * (-1);
+		a = a * -1;
 	if (b < 0)
-		b = b * (-1);
+		b = b * -1;
 	if (a_loc < 0)
-		a_loc = a_loc * (-1);
+		a_loc = a_loc * -1;
 	if (b_loc < 0)
-		b_loc = b_loc * (-1);
+		b_loc = b_loc * -1;
 	if (a + b > a_loc + b_loc)
 		return (1);
 	else

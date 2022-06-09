@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:35:40 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/09 13:50:25 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/06/09 21:23:13 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,6 @@ int	main(int argc, char **argv)
 	ft_check_arr_sort(num_arr, arr_size, 0);
 	info->arr = (int *)num_arr;
 	ft_sort(info);
-	while (info->top_a)
-	{
-		printf("%d\n", info->top_a->content);
-		info->top_a = info->top_a->next;
-	}
 	return (0);
 }
 
@@ -43,7 +38,6 @@ int	print_error(int type)
 	if (type >= 1)
 		write(2, "Error\n", 6);
 	exit (1);
-	return (-1);
 }
 
 t_info	*ft_info_new(void)

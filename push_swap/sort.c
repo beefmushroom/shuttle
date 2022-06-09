@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:18:41 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/09 13:59:47 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/06/09 21:41:01 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@ void	ft_sort(t_info *info)
 			sa(info);
 	}
 	else if (info->size_a == 3)
+	{
 		ft_sort_three_case(info);
+	}
 	else
+	{
 		ft_sort_rest(info);
+	}
 }
 
 void	ft_sort_three_case(t_info *info)
@@ -33,7 +37,7 @@ void	ft_sort_three_case(t_info *info)
 
 	top = info->top_a->content;
 	mid = info->top_a->next->content;
-	bot = info->bot_a->content;
+	bot = info->top_a->next->next->content;
 	if (top > mid && mid > bot)
 	{
 		sa(info);
