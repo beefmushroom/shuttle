@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:35:40 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/09 21:23:13 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/06/09 22:08:59 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ t_info	*ft_info_new(void)
 
 	new_mem = NULL;
 	new_mem = (t_info *)malloc(sizeof(t_info));
+	if (new_mem == NULL)
+		print_error(1);
 	stack_a = ft_stack_new();
 	new_mem->arr = NULL;
 	new_mem->size_a = 0;
@@ -62,6 +64,8 @@ t_num	*ft_stack_new(void)
 
 	new_mem = NULL;
 	new_mem = (t_num *)malloc(sizeof(t_num));
+	if (new_mem == NULL)
+		print_error(1);
 	new_mem->prev = NULL;
 	new_mem->content = 0;
 	new_mem->next = NULL;
