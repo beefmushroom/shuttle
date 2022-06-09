@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 14:04:03 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/09 21:35:01 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/06/09 22:27:34 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void	ft_arr_to_stack(t_info *info, int *arr, int size)
 		idx++;
 	}
 	info->bot_a = info->bot_a->prev;
+	info->bot_a->next = NULL;
 	free(new_node);
 }
 
