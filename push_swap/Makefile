@@ -6,13 +6,22 @@
 #    By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 18:51:10 by sungjuki          #+#    #+#              #
-#    Updated: 2022/06/08 19:10:35 by sungjuki         ###   ########.fr        #
+#    Updated: 2022/06/10 12:20:56 by sungjuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= push_swap
-LIBFT		= libft
-LIBFT_LIB	= libft.a
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -c
+
+AR = ar
+ARFLAGS = -cr
+
+RM = rm
+RMFLAGS = -f
+
+NAME = push_swap
+LIBFT = libft
+LIBFT_LIB = libft.a
 
 SRCS		=	push_swap.c \
 				array_utils.c \
@@ -25,11 +34,7 @@ SRCS		=	push_swap.c \
 				sort_utils.c \
 				sort.c
 
-OBJS		= $(SRCS:%.c=%.o)
-
-LIBC		= ar rc
-
-FLAGS		= -Wall -Wextra -Werror
+OBJS		= $(SRCS:.c=.o)
 
 all			:	$(NAME)
 
@@ -40,16 +45,16 @@ $(NAME)		:	$(OBJS)
 %.o			:	%.c
 		gcc $(FLAGS) -c $^ -I./ -o $@
 
+.Phony : all clean fclean re
 
-clean		:
-		rm -f $(OBJS)
-		make clean -C $(LIBFT)
+all : $(NAME)
 
-fclean		:	clean
-		rm -f $(NAME)
-		rm -f $(LIBFT_LIB)
-		make fclean -C $(LIBFT)
+clean :
+	$(RM) $(RMFLAGS) $(OBJS)
+	make clean -C $(LIBFT)
 
-re			:	fclean all
+fclean : clean
+	$(RM) $(RMFLAGS) $(NAME)
+	make fclean -C $(LIBFT)
 
-.PHONY		:	all clean fclean re bonus
+re : fclean all
