@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:34:03 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/13 15:25:44 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/06/14 12:55:11 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,30 @@ int	main(void)
 	signal(SIGUSR2, server_get_bytes);
 	while (1)
 		pause();
+}
+
+void	server_get_bytes(int sig)
+{
+	static char	char_tmp;
+	static int	len_bit;
+
+	if (sig == SIGUSR1)
+	{
+		char_tmp |= 0;
+		if (len_bit < 7)
+			char_tmp <<= 1;
+	}
+	else if (sig == SIGUSR2)
+	{
+		char_tmp |= 1;
+		if (len_bit < 7)
+			char_tmp <<= 1;
+	}
+	len_bit++;
+	if (len_bit == 8)
+	{
+		write(1, &char_tmp, 1);
+		len_bit = 0;
+		char_tmp = 0;
+	}
 }
