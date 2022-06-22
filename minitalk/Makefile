@@ -6,12 +6,12 @@
 #    By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/20 14:08:27 by sungjuki          #+#    #+#              #
-#    Updated: 2022/06/20 16:06:04 by sungjuki         ###   ########.fr        #
+#    Updated: 2022/06/22 13:22:23 by sungjuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SOURCES = server.c client.c
-OBJECTS = $(SOURCES:.c=.o)
+SRCS = server.c client.c
+OBJECTS = $(SRCS:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
