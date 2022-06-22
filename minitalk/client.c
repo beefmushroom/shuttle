@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:17:09 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/22 12:55:50 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:17:21 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	send_msg(int pid, char *str)
 				kill_and_pause(pid, SIGUSR2);
 			bit_idx++;
 		}
-		usleep(42);
+		usleep(420);
 		byte_idx++;
 	}
 	line_break(pid);
