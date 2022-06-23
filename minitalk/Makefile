@@ -1,4 +1,4 @@
-# **************************************************************************** #
+#**************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,36 +6,38 @@
 #    By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/20 14:08:27 by sungjuki          #+#    #+#              #
-#    Updated: 2022/06/22 13:22:23 by sungjuki         ###   ########.fr        #
+#    Updated: 2022/06/23 14:35:48 by sungjuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = server.c client.c
-OBJECTS = $(SRCS:.c=.o)
+SERVER   = server
+CLIENT   = client
+CC	     = gcc
+FLAGS    = -Wall -Werror -Wextra
+LIBS	 = -Llibft -lft
+LIBFT	 = libft.a
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+all : $(LIBFT) $(SERVER) $(CLIENT)
 
-all: server client
+$(LIBFT) : 
+	@make -C libft
 
-server: server.o libft
-	$(CC) -o $@ $< -Llibft -lft
+$(SERVER) : server.o
+	$(CC) server.o $(LIBS) -o $@
 
-client: client.o libft
-	$(CC) -o $@ $< -Llibft -lft
+$(CLIENT) : client.o
+	$(CC) client.o $(LIBS) -o $@
 
-%.o: %.c
-	$(CC) -c $(CFLAGS) $?
+%.o : %.c
+	$(CC) $(FLAGS) -c $?
 
-libft:
-	make -C libft
+clean :
+	make clean -C libft
+	rm -f *.o
 
-clean:
-	rm -f $(OBJECTS)
-	make -C libft clean
-	
 fclean: clean
-	rm -f server client libft/libft.a
+	make fclean -C libft
+	rm -f $(SERVER) $(CLIENT)
 
 re: fclean all
 
