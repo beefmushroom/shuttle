@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/06/29 15:37:54 by sungjuki          #+#    #+#              #
+#    Updated: 2022/06/29 15:57:31 by sungjuki         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME		= so_long
 
 SRCS		= so_long.c \
@@ -9,8 +21,6 @@ SRCS		= so_long.c \
 			  so_long_utils.c \
 
 OBJS		= $(SRCS:%.c=%.o)
-
-LIBC		= ar rc
 
 FLAGS		= -Wall -Wextra -Werror
 

@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:23:56 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/29 15:28:31 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/06/29 15:56:33 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int	ft_strlcpy_without_nl(char *dst, char *src, int len)
 		src++;
 		i++;
 	}
-	//dst[i] = '\0'; 왜?
 	*dst = '\0';
 	return (src_len);
 }
