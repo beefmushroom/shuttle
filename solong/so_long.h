@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:25:04 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/29 15:21:04 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/07/05 11:33:14 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 # include <fcntl.h>
 # include <stdio.h>
 
-# define X_EVENT_KEY_PRESS			2
-# define X_EVENT_KEY_RELEASE		3
+# define KEY_PRESS			2
+# define KEY_RELEASE		3
 
-# define X_EVENT_KEY_EXIT		17
+# define KEY_EXIT		17
 # define KEY_ESC		53
 # define KEY_W			13
 # define KEY_A			0

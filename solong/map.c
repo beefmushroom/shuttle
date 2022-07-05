@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:03:57 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/29 15:34:44 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/07/05 12:10:42 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,22 +48,22 @@ void	map_check_wall(t_game *game)
 	int	i;
 
 	i = 0;
-	while (i < (int)ft_strlen(game->str_line))
+	while (i < ft_strlen(game->str_line))
 	{
 		if (i < game->w)
 		{
 			if (game->str_line[i] != '1')
-				print_err("Map needs to be closed or surrounded by walls\n");
+				print_err("Map needs to be surrounded by walls\n");
 		}
 		else if (i % game->w == 0 || i % game->w == game->w - 1)
 		{
 			if (game->str_line[i] != '1')
-				print_err("Map needs to be closed or surrounded by walls\n");
+				print_err("Map needs to be surrounded by walls\n");
 		}
-		else if (i > (int)ft_strlen(game->str_line) - game->w)
+		else if (i > ft_strlen(game->str_line) - game->w)
 		{
 			if (game->str_line[i] != '1')
-				print_err("Map needs to be closed or surrounded by walls\n");
+				print_err("Map needs to be surrounded by walls\n");
 		}
 		i++;
 	}
@@ -80,7 +80,7 @@ void	map_check_params(t_game *game)
 	num_p = 0;
 	game->all_col = 0;
 	game->col_cnt = 0;
-	while (i++ < (int)ft_strlen(game->str_line))
+	while (i < ft_strlen(game->str_line))
 	{
 		if (game->str_line[i] == 'E')
 			num_e++;
@@ -88,6 +88,7 @@ void	map_check_params(t_game *game)
 			num_p++;
 		else if (game->str_line[i] == 'C')
 			game->all_col++;
+		i++;
 	}
 	if (num_e == 0)
 		print_err("Map must have one exit at least.\n");

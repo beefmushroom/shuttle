@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:14:25 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/29 13:55:32 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/07/05 11:49:11 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	main(int ac, char **av)
 	t_game	*game;
 
 	if (ac != 2)
-		print_err("Map is missing\n");
+		print_err("Map is needed or wrong arguments counts\n");
 	game = malloc(sizeof(t_game));
 	game_init(game, av[1]);
-	mlx_hook(game->win, X_EVENT_KEY_PRESS, 0, &press_key, game);
-	mlx_hook(game->win, X_EVENT_KEY_EXIT, 0, &exit_game, game);
+	mlx_hook(game->win, KEY_PRESS, 0, &press_key, game);
+	mlx_hook(game->win, KEY_EXIT, 0, &exit_game, game);
 	mlx_loop(game->mlx);
 	return (0);
 }
@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 void	print_err(char	*msg)
 {
 	write(2, "Error\n", 6);
-	write(2, msg, (int)ft_strlen(msg));
+	write(2, msg, ft_strlen(msg));
 	exit(1);
 }
 

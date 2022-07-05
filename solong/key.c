@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 10:15:28 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/06/29 12:53:10 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/07/05 12:04:20 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	move_w(t_game *g)
 	int	i;
 
 	i = 0;
-	while (i < (int)ft_strlen(g->str_line))
+	while (i < ft_strlen(g->str_line))
 	{
 		if (g->str_line[i] == 'P')
 			break ;
@@ -49,7 +49,7 @@ void	move_a(t_game *g)
 	int	i;
 
 	i = 0;
-	while (i < (int)ft_strlen(g->str_line))
+	while (i < ft_strlen(g->str_line))
 	{
 		if (g->str_line[i] == 'P')
 			break ;
@@ -59,7 +59,7 @@ void	move_a(t_game *g)
 		g->col_cnt++;
 	if (g->str_line[i - 1] == 'E' && g->all_col == g->col_cnt)
 		clear_game(g);
-	else if (g->str_line[i - 1] != '1' && g->str_line[i - g->w] != 'E')
+	else if (g->str_line[i - 1] != '1' && g->str_line[i - 1] != 'E')
 	{
 		g->str_line[i] = '0';
 		g->str_line[i - 1] = 'P';
@@ -74,7 +74,7 @@ void	move_s(t_game *g)
 	int	i;
 
 	i = 0;
-	while (i < (int)ft_strlen(g->str_line))
+	while (i < ft_strlen(g->str_line))
 	{
 		if (g->str_line[i] == 'P')
 			break ;
@@ -99,7 +99,7 @@ void	move_d(t_game *g)
 	int	i;
 
 	i = 0;
-	while (i < (int)ft_strlen(g->str_line))
+	while (i < ft_strlen(g->str_line))
 	{
 		if (g->str_line[i] == 'P')
 			break ;
