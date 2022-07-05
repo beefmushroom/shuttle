@@ -6,7 +6,7 @@
 #    By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 15:37:54 by sungjuki          #+#    #+#              #
-#    Updated: 2022/06/29 15:57:31 by sungjuki         ###   ########.fr        #
+#    Updated: 2022/07/05 13:14:24 by sungjuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ FLAGS		= -Wall -Wextra -Werror
 all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
-		gcc -g -o $(NAME) $(OBJS) -L./mlx -lmlx -framework OpenGL -framework AppKit
+	gcc -g -o $(NAME) $(OBJS) -L./mlx -lmlx -framework OpenGL -framework AppKit
 
 %.o			:	%.c
 		gcc $(FLAGS) -c $^ -I./ -o $@

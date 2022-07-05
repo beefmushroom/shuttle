@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:25:04 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/07/05 11:33:14 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/07/05 13:06:04 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 
-# define KEY_PRESS			2
-# define KEY_RELEASE		3
-
-# define KEY_EXIT		17
+# define KEY_PRESS		2
 # define KEY_ESC		53
 # define KEY_W			13
 # define KEY_A			0
@@ -52,7 +49,6 @@ typedef struct s_game
 char	*ft_strdup_without_nl(char *s);
 int		ft_strlcpy_without_nl(char *dst, char *src, int len);
 char	*ft_strjoin_without_nl(char *s1, char *s2);
-
 t_img	img_init(void *mlx);
 void	put_img(t_game *g, int w, int h);
 void	setting_img(t_game *game);

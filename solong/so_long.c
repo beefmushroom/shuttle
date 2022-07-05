@@ -6,7 +6,7 @@
 /*   By: sungjuki <sungjuki@student.42seoul.k       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:14:25 by sungjuki          #+#    #+#             */
-/*   Updated: 2022/07/05 11:49:11 by sungjuki         ###   ########.fr       */
+/*   Updated: 2022/07/05 13:05:52 by sungjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	main(int ac, char **av)
 	game = malloc(sizeof(t_game));
 	game_init(game, av[1]);
 	mlx_hook(game->win, KEY_PRESS, 0, &press_key, game);
-	mlx_hook(game->win, KEY_EXIT, 0, &exit_game, game);
 	mlx_loop(game->mlx);
 	return (0);
 }
